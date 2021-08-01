@@ -9,25 +9,25 @@ public class PreWorkAssignmentSolution {
 
 	public void checkPalindrome(int input) {
 		System.out.println("The input is :" + input);
-		String inputStr= String.valueOf(input);
-		String reverseStr= null;
+		String inputStr = String.valueOf(input);
+		String reverseStr = null;
 		StringBuffer sb = new StringBuffer();
-		if(inputStr != null && !inputStr.isEmpty()) {
+		if (inputStr != null && !inputStr.isEmpty()) {
 			int strLength = inputStr.length();
-			for (int j = strLength; j>0;j--) {
-				char c = inputStr.charAt(j-1);
+			for (int j = strLength; j > 0; j--) {
+				char c = inputStr.charAt(j - 1);
 				sb.append(c);
-				
+
 			}
 			reverseStr = sb.toString();
-			
+
 		}
 		Integer reverseInput = Integer.parseInt(reverseStr);
-		if(input == reverseInput) {
+		if (input == reverseInput) {
 			System.out.println("\n");
 			System.out.println("The number is a palindrome no");
 			System.out.println("\n");
-		}else {
+		} else {
 			System.out.println("\n");
 			System.out.println("The number is not a palindrome number");
 			System.out.println("\n");
@@ -56,38 +56,50 @@ public class PreWorkAssignmentSolution {
 
 	public void checkPrimeNumber(int input) {
 		System.out.println("The input is :" + input);
-		boolean  primeNoFlag = true;
-		String inputStr= String.valueOf(input);
-		if(inputStr != null && !inputStr.isEmpty()) {
-			for(int index=2;index<input;index++) {
-				int result = input%index;
-				if(result == 0) {
+		boolean primeNoFlag = true;
+		String inputStr = String.valueOf(input);
+		if (inputStr != null && !inputStr.isEmpty()) {
+			for (int index = 2; index < input; index++) {
+				int result = input % index;
+				if (result == 0) {
 					primeNoFlag = false;
 					break;
 				}
 			}
-			if(primeNoFlag) {
+			if (primeNoFlag) {
 				System.out.println("\n");
 				System.out.println("The number is a prime number");
 				System.out.println("\n");
-			}else {
+			} else {
 				System.out.println("\n");
 				System.out.println("The number is not a prime number");
 				System.out.println("\n");
 			}
 		}
-		
+
 	}
 
 	// function to print Fibonacci Series
 
 	public void printFibonacciSeries(int input) {
+		System.out.println("The fibonacci series is as below..");
+		System.out.println("\n");
+		for (int i = 0; i < input; i++) {
 
-		// initialize the first and second value as 0,1 respectively.
+			System.out.print(fib(i) + " ");
 
-		int first = 0, second = 1;
-		System.out.println("The input is :" + input);
+		}
+		System.out.println("\n");
 
+	}
+
+	public int fib(int total) {
+		// Base Case
+		if (total <= 1) {
+			return total;
+		}
+
+		return fib(total - 1) + fib(total - 2);
 	}
 
 	// main method which contains switch and do while loop
