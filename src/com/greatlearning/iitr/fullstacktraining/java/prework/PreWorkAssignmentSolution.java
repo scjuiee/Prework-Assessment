@@ -56,6 +56,27 @@ public class PreWorkAssignmentSolution {
 
 	public void checkPrimeNumber(int input) {
 		System.out.println("The input is :" + input);
+		boolean  primeNoFlag = true;
+		String inputStr= String.valueOf(input);
+		if(inputStr != null && !inputStr.isEmpty()) {
+			for(int index=2;index<input;index++) {
+				int result = input%index;
+				if(result == 0) {
+					primeNoFlag = false;
+					break;
+				}
+			}
+			if(primeNoFlag) {
+				System.out.println("\n");
+				System.out.println("The number is a prime number");
+				System.out.println("\n");
+			}else {
+				System.out.println("\n");
+				System.out.println("The number is not a prime number");
+				System.out.println("\n");
+			}
+		}
+		
 	}
 
 	// function to print Fibonacci Series
